@@ -17,40 +17,89 @@
 
       [data-theme="dark"] {
         --primary-color: rgb(0, 0, 0);
-        --secondary-color: rgb(156, 156, 156);
-        --bg-color: rgb(196, 219, 228);
+        --secondary-color: rgb(112, 110, 110);
+        --bg-color: rgb(1, 56, 78);
         --font-color:rgb(255, 255, 255);
-        --heading-color:rgb(46,194,240);
+        --heading-color:rgb(139, 223, 248);
       }
 
-      header {
-        color: var(--heading-color); 
-        background-color: var(--secondary-color); 
-        text-align: center; 
-        text-size-adjust: 150;
-        width: 100%;
-      }
-
+     
       body {
         color: var(--font-color); 
         background-color: var(--primary-color);
         max-width: 800px;
       }
+
+      
+     
     </style>
 
   </head>
+  
+  <script>
+    var isLight = true;
+
+    function themechange() {
+      var e = document.querySelector(":root");
+
+      if (isLight === true) {
+        e.setAttribute("data-theme", "dark"),
+        isLight = false
+      } else {
+        e.setAttribute("data-theme", "light");
+        isLight = true        
+      }
+    }
+
+   function Pardalote(){
+      document.getElementById('myImage')
+      .src="http://www.outgrabe.net/bird00.jpg";
+      document.getElementById('message')
+     .innerHTML="Pardalote by fir0002 (CC-by-NC)";
+    }
+    function PurpleSwampHen(){
+      document.getElementById('myImage')
+      .src="http://www.outgrabe.net/bird01.jpg";
+      document.getElementById('message')
+     .innerHTML="Purple swamp hen by Toby Hudson (CC-by-SA)";
+    }   
+    function WhiteHeadedStilt(){
+      document.getElementById('myImage')
+      .src="http://www.outgrabe.net/bird02.jpg";
+      document.getElementById('message')
+     .innerHTML="White-headed Stilt by JJ Harrison (CC-by-SA)";
+    }   
+    function InlandThornbill(){
+      document.getElementById('myImage')
+      .src="http://www.outgrabe.net/bird03.jpg";
+      document.getElementById('message')
+     .innerHTML="Inland Thornbill by Peter Jacobs (CC-by-SA)";
+    }
+    function RoseRobin(){
+      document.getElementById('myImage')
+      .src="http://www.outgrabe.net/bird04.jpg";
+      document.getElementById('message')
+     .innerHTML="Rose Robin by JJ Harrison (CC-by-SA)";
+    }
+
+  </script>
 
   <body>
 
-  <header> 
-    <h1>CA4 Samantha Thorpe</h1>
-  </header> 
-
   <main>
-    <p>This assignment is not the simplest thing in the world</p>
+    <h1>CA4 Samantha Thorpe</h1>
+
+    <img id= "myImage" src="http://www.outgrabe.net/bird00.jpg">
+
+    <p id="message">Pardalote by fir0002 (CC-by-NC)</p>
     
-    
-    <aside>xxxx</aside>
+    <button id="btnPardalote" onclick="Pardalote()">Pardalote</button>
+    <button id="btnPurpleSwampHen" onclick="PurpleSwampHen()">Purple Swamp Hen</button>
+    <button id="btnWhiteHeadedStilt" onclick="WhiteHeadedStilt()">White-Headed Stilt</button>
+    <button id="btnInlandThornbill" onclick="InlandThornbill()">Inland Thornbill</button>
+    <button id="btnRoseRobin" onclick="RoseRobin()">Rose Robin</button>
+
+    <button onclick="themechange()">Change theme</button>
   
   </main>
   </body>
